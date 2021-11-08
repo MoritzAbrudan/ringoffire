@@ -8,7 +8,8 @@ import { Game } from 'src/models/game';
 })
 export class GameComponent implements OnInit {
   pickCardAnimation = false;
-  game: Game;
+  currentCard: string| undefined = '';
+  game!: Game;
 
   constructor() { }
 
@@ -21,7 +22,14 @@ export class GameComponent implements OnInit {
   }
 
   pickCard() {
-    this.pickCardAnimation = true;
+    if (!this.pickCardAnimation) {
+      this.currentCard = this.game.stack.pop();
+      this.pickCardAnimation = true;
+      setTimeout(() => {
+        this.game.playedCards.push(this.currentCard);
+        this.pickCardAnimation = false;
+      }, 1000);
+    }
   }
 
 }

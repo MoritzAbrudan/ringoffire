@@ -15,7 +15,7 @@ export class Game {
     }
 }
 
-function shuffle(array) {
+function shuffle(array: any[]) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (0 !== currentIndex) {

@@ -2,6 +2,7 @@
     <div class="card-stack">
         <img [ngStyle]="{'right.px':i}" *ngFor="let c of [0,1,2,3]; let i = index;" src="/assets/img/cards/card_cover.png">
         <img (click)="pickCard()" class="top-card" style="right: 15px" src="/assets/img/cards/card_cover.png">
-        <img (click)="pickCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 15px" src="/assets/img/cards/ace_1.png">
+        <img *ngFor="let card of game.playedCards" class="played-card" src="/assets/img/cards/{{ card }}.png">
+        <img (click)="pickCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 15px" src="/assets/img/cards/{{ currentCard }}.png">
     </div>
 </div>
