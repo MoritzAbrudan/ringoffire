@@ -4,8 +4,8 @@ import { GameComponent } from './game/game.component';
 import { StartscreenComponent } from './startscreen/startscreen.component';
 
 const routes: Routes = [
-  {path: '', component:StartscreenComponent},
-  {path:'game', component:GameComponent},
+  { path: '', component: StartscreenComponent },
+  { path: 'game/:id', component: GameComponent },
 ];
 
 @NgModule({
