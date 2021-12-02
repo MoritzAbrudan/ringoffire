@@ -5,9 +5,13 @@
     background-color: rgba(128, 128, 128, 0.8);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    overflow: hidden;
     span {
-        font-size: 32px;
+        font-size: 24px;
         margin-left: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     img {
         width: 50px;
